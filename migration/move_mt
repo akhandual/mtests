@@ -1,0 +1,4 @@
+./migration_mbind_mt
+./migration_numa_move_pages_mt
+./thp_migration_mbind_mt
+./thp_migration_numa_move_pages_mt
