@@ -1,4 +1,4 @@
-SUBDIRS := hugetlb migration oom thp misc
+SUBDIRS := hugetlb migration oom thp misc mprotect
 
 all: $(SUBDIRS)
 $(SUBDIRS):

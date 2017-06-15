@@ -1,12 +1,12 @@
 #define PAGE_SIZE	0x10000UL   /* 64KB */
 #define HPAGE_SIZE	0x1000000UL /* 16MB */
 
-#define NR_PAGES	128 /* 100352 */
+#define NR_PAGES	1024 /* 100352 */
 #define ALLOC_SIZE	NR_PAGES * PAGE_SIZE
 #define ALLOC_HSIZE	NR_PAGES * HPAGE_SIZE
 
-#define NODE0		2
-#define NODE1		3
+#define NODE0		1
+#define NODE1		2
 #define MAX_NODE	256
 #define SIZE_GB		1024UL * 1024UL * 1024UL
 

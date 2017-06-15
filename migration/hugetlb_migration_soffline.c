@@ -21,14 +21,13 @@ int main(int argc, char *argv[])
 
 	load_pattern(ptr, ALLOC_HPAGE, MEM_PATTERN_1);
 
-	/*
 	ret = madvise(ptr, ALLOC_HPAGE, MADV_SOFT_OFFLINE);
 	if (ret) {
 		perror("madvise() failed for ptr");
 		return -1;
 	}
-	*/
 
+	/*
 	tmp = ptr;
 	for(i = 0; i < 255; i++) {
 		ret = madvise(tmp + i * PAGE_SIZE, PAGE_SIZE, MADV_SOFT_OFFLINE);
@@ -37,6 +36,7 @@ int main(int argc, char *argv[])
 			return -1;
 		}
 	}
+	*/
 	check_pattern(ptr, ALLOC_HPAGE, MEM_PATTERN_1);
 	return 0;
 }
