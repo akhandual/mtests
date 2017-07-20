@@ -15,7 +15,7 @@
 #define u32 uint32_t
 #define u64 uint64_t
 
-#define SYS_mprotect_key 386
+#define SYS_pkey_mprotect 386
 #define SYS_pkey_alloc   384
 #define SYS_pkey_free    385
 #define si_pkey_offset  0x20
@@ -179,3 +179,30 @@ int sys_pkey_free(unsigned long pkey)
 
         return ret;
 }
+
+int sys_pkey_mprotect(void *ptr, size_t size, unsigned long prot, unsigned long pkey)
+{
+        int ret = syscall(SYS_pkey_mprotect, ptr, size, prot, pkey);
+
+        return ret;
+}
+
+double time_ms(struct timeval begin, struct timeval end)
+{
+	double total_time = 0;
+
+	total_time = (end.tv_sec - begin.tv_sec) * 1000;	/* In ms */
+	total_time += (end.tv_usec - begin.tv_usec) / 1000;	/* In ms */
+	return total_time;
+}
+
+double time_us(struct timeval begin, struct timeval end)
+{
+	double total_time = 0;
+
+	total_time = (end.tv_sec - begin.tv_sec) * 1000000;	/* In ms */
+	total_time += (end.tv_usec - begin.tv_usec);	/* In ms */
+	return total_time;
+}
+
+

@@ -33,6 +33,7 @@ static void check_pattern(char *addr, unsigned long size, unsigned long pattern)
 		return;
 	}
 }
+
 double time_ms(struct timeval begin, struct timeval end)
 {
 	double total_time = 0;
